@@ -1,4 +1,4 @@
-module github.com/maaslalani/confetty
+module github.com/mikeflynn/confetty
 
 go 1.18
 

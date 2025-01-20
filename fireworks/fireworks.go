@@ -5,8 +5,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/maaslalani/confetty/array"
-	"github.com/maaslalani/confetty/simulation"
+	"github.com/mikeflynn/confetty/array"
+	"github.com/mikeflynn/confetty/simulation"
 
 	tea "github.com/charmbracelet/bubbletea"
 	"github.com/charmbracelet/harmonica"
