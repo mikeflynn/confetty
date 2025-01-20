@@ -31,7 +31,7 @@ func animate() tea.Cmd {
 }
 
 // Confetti model
-type model struct {
+type Model struct {
 	system *simulation.System
 }
 
@@ -58,21 +58,21 @@ func Spawn(width, height int) []*simulation.Particle {
 	return particles
 }
 
-func InitialModel() model {
-	return model{system: &simulation.System{
+func InitialModel() Model {
+	return Model{system: &simulation.System{
 		Particles: []*simulation.Particle{},
 		Frame:     simulation.Frame{},
 	}}
 }
 
 // Init initializes the confetti after a small delay
-func (m model) Init() tea.Cmd {
+func (m Model) Init() tea.Cmd {
 	return animate()
 }
 
 // Update updates the model every frame, it handles the animation loop and
 // updates the particle physics every frame
-func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 	switch msg := msg.(type) {
 	case tea.KeyMsg:
 		switch msg.String() {
@@ -99,6 +99,6 @@ func (m model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
 }
 
 // View displays all the particles on the screen
-func (m model) View() string {
+func (m Model) View() string {
 	return m.system.Render()
 }
